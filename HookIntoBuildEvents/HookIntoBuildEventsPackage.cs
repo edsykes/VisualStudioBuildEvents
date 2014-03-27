@@ -86,6 +86,17 @@ namespace Company.HookIntoBuildEvents
                 Debug.WriteLine(solutionConfig, context);
             };
 
+            dte.Events.BuildEvents.OnBuildProjConfigDone += (project, config, platform, solutionConfig, success) =>
+                {
+                    Debug.WriteLine("Project Build Begin", context);
+                    Debug.WriteLine(project, context);
+                    Debug.WriteLine(config, context);
+                    Debug.WriteLine(platform, context);
+                    Debug.WriteLine(solutionConfig, context);
+                    Debug.WriteLine(success, context);
+                };
+
+
         }
         #endregion
 
